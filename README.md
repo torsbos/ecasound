@@ -5,7 +5,7 @@ my ecasound chainsetup for easy cli audio multitracking.
 
 ```
 $ git clone https://github.com/torsbos/ecasound.git 
-$ cd eca && mkdir rec mix
+$ cd ecasound/eca && mkdir rec mix
 ```
 
 ## usage
