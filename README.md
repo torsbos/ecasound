@@ -75,7 +75,7 @@ recording then becomes:
 $ er rec2*
 ```
 
-and mixing simply becomes:
+and mixing down with playback simply becomes:
 
 ```
 $ em
