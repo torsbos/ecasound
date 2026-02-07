@@ -29,7 +29,9 @@ you might need to enter:
 > setpos 0
 ```
 
-to record type
+to reset the playhead 
+
+to record, type:
 
 ```
 > t
@@ -38,7 +40,7 @@ to record type
 you can repeat this as many times as you wish.
 the file will be overwritten, meaning only the last recording is saved.
 
-to exit, type
+to exit, type:
 
 ```
 > s
