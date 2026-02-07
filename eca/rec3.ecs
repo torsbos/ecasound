@@ -1,0 +1,3 @@
+-a:1 -i rec/1.mp3 -o jack,system
+-a:2 -i rec/2.mp3 -o jack,system
+-a:3 -i jack,system -o rec/3.mp3
