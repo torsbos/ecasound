@@ -9,8 +9,6 @@ $ cd eca && mkdir rec mix
 ```
 
 ## usage
-`cd` into `eca`
-
 
 to record track 1:
 
@@ -29,23 +27,34 @@ you might need to enter:
 
 ```
 > setpos 0
-
 ```
 
-to record type `t`
+to record type
+
+```
+> t
+```
 
 you can repeat this as many times as you wish.
 the file will be overwritten, meaning only the last recording is saved.
-to exit, type `s`
 
-now you have two tracks, residing in the `rec` folder
+to exit, type
+
+```
+> s
+```
+
+now you have two tracks, residing in the `eca/rec` folder
 
 to record track 3, repeat previous steps but replace `rec2*` with `rec3*`
+
 this goes for track 4 aswell.
+
 (you could theoretically add as many tracks as your system can handle,
 for now i have added 4 tracks).
 
 to mix down to one file and play:
+
 ```
 $ ecasound -s mix.* && play mix/*
 ```
@@ -55,11 +64,20 @@ $ ecasound -s mix.* && play mix/*
 make aliases for recording and mixing. for example:
 
 ```
-alias er='ecasound -c -s' #ecasound record
-alias em='ecasound -s mix.* && play mix/*' #ecasound mix
+$ alias er='ecasound -c -s' 
+$ alias em='ecasound -s mix.* && play mix/*' 
 ```
-recording then becomes `er rec2*` for example
-and mixing simply becomes `em`
+recording then becomes:
+
+```
+$ er rec2*
+```
+
+and mixing simply becomes:
+
+```
+$ em
+```
 
 ## dependencies
 `ecasound`
