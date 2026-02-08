@@ -1,0 +1,2 @@
+-a:1 -i tracks/1.mp3 -o jack,system
+-a:2 -i jack,system -o tracks/2.mp3
