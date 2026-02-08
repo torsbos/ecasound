@@ -1,56 +1,73 @@
-# ecasound chainsetup
+# ecasound multitracking
 my ecasound chainsetup for easy cli audio multitracking.
 
 ## install
 
 ```
 $ git clone https://github.com/torsbos/ecasound.git 
-$ cd ecasound/eca && mkdir -p rec mix
+$ cd ecasound/eca && mkdir -p tracks mix
+```
+
+## install - optional
+adding aliases will make the workflow easier
+
+make aliases for recording and mixing. for example:
+
+```
+$ alias er='ecasound -c -s' 
+$ alias em='ecasound -s x* && play mix/*' 
 ```
 
 ## usage
 
-to record track 1:
+to start recording:
 
 ```
-$ rec rec/1.mp3
+$ er 1*
 ```
 
-to record track 2, and start multitracking:
+or:
 
 ```
-$ ecasound -c -s rec2*
+$ ecasound -c -s 1*
 ```
 
-this will enter the interactive mode.
-you might need to enter:
-
-```
-> setpos 0
-```
-
-to reset the playhead 
-
-to record, type:
+this will enter the interactive mode for recording track 1.
+to start audio processing:
 
 ```
 > t
 ```
 
-you can repeat this as many times as you wish.
-the file will be overwritten, meaning only the last recording is saved.
+to stop:
 
-to exit, type:
 
 ```
 > s
 ```
 
-now you have two tracks, residing in the `eca/rec` folder
+to reset the playhead:
 
-to record track 3, repeat previous steps but replace `rec2*` with `rec3*`
+```
+> setpos 0
+```
 
-this goes for track 4 aswell.
+or:
+
+```
+> rw 999
+```
+
+you can repeat this as many times as you wish.
+only the last recording is saved.
+
+to exit, type:
+
+```
+> q
+```
+
+to start multitracking, replace the `1*` with `2*`, `3*` etc. when invoking the `er` command
 
 (you could theoretically add as many tracks as your system can handle,
 for now i have added 4 tracks).
@@ -58,32 +75,18 @@ for now i have added 4 tracks).
 to mix down to one file and play:
 
 ```
-$ ecasound -s mix.* && play mix/*
-```
-
-## tips
-
-make aliases for recording and mixing. for example:
-
-```
-$ alias er='ecasound -c -s' 
-$ alias em='ecasound -s mix.* && play mix/*' 
-```
-recording then becomes:
-
-```
-$ er rec2*
-```
-
-and mixing down with playback simply becomes:
-
-```
 $ em
+```
+
+or:
+
+```
+$ ecasound -s x* && play mix/*
 ```
 
 ## dependencies
 `ecasound`
 
-`sox` 
+`sox` - for `play` command
 
-`pipewire-jack`
+`pipewire-jack`  - for low latency recording
