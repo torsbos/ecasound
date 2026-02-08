@@ -5,7 +5,7 @@ my ecasound chainsetup for easy cli audio multitracking.
 
 ```
 $ git clone https://github.com/torsbos/ecasound.git 
-$ cd ecasound/eca && mkdir -p tracks mix
+$ cd ecasound/eca && mkdir -p t m
 ```
 
 ## install - optional
@@ -15,7 +15,7 @@ make aliases for recording and mixing. for example:
 
 ```
 $ alias er='ecasound -c -s' 
-$ alias em='ecasound -s x* && play mix/*' 
+$ alias em='ecasound -s x* && play m/*' 
 ```
 
 ## usage
@@ -67,10 +67,12 @@ to exit, type:
 > q
 ```
 
-to start multitracking, replace the `1*` with `2*`, `3*` etc. when invoking the `er` command
+to start multitracking, replace the `1*` with `2*`, `3*` etc. when invoking the `er` command.
 
 (you could theoretically add as many tracks as your system can handle,
 for now i have added 4 tracks).
+
+all tracks are saved in `eca/t`
 
 to mix down to one file and play:
 
@@ -81,8 +83,10 @@ $ em
 or:
 
 ```
-$ ecasound -s x* && play mix/*
+$ ecasound -s x* && play m/*
 ```
+
+mixes are saved in `eca/m`
 
 ## dependencies
 `ecasound`
